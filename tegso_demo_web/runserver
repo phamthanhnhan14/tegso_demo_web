@@ -1,0 +1,78 @@
+#!/bin/sh
+#
+# Startup script for Main
+export APPNAME=tegso_demo_web
+export HOME=/zserver/java-projects/tegso_demo_web
+cd $HOME
+export APPENV=production
+export WEB_SERVER_HOST=0.0.0.0
+export WEB_SERVER_PORT=8888
+export CLASSMAIN=business.systemd.ServiceDaemon
+export XMS=512M
+export CONF=conf
+export JARFILE=dist/tegso_demo_web.jar
+export JAVA_HOME="/zserver/java"
+
+pid_file=tmp/service.pid
+log_file=tmp/service.log
+
+JVM_OPTS=" \
+        -Dupmonitor=1
+        -Dconfig=$CONF \
+        -Dapppath=$HOME \
+        -Dappenv=$APPENV \
+        -Dzname=$APPNAME \
+        -Dupmonitor=1 \
+        -Dweb_server_host=$WEB_SERVER_HOST \
+        -Dweb_server_port=$WEB_SERVER_PORT \
+        -Dforeground=true \
+        -Djzcommonx.version=1.0.0 \
+        -Dzicachex.version=1.0.0 \
+        -Xmx$XMS \
+        -XX:SurvivorRatio=8 \
+        -XX:+UseParNewGC \
+        -XX:+UseConcMarkSweepGC \
+        -XX:+CMSParallelRemarkEnabled \
+        -XX:MaxTenuringThreshold=1 \
+        -XX:CMSInitiatingOccupancyFraction=75 \
+        -XX:+UseCMSInitiatingOccupancyOnly \
+        -XX:+HeapDumpOnOutOfMemoryError "
+
+if [ -x $JAVA_HOME/bin/java ]; then
+    JAVA=$JAVA_HOME/bin/java
+else
+    JAVA=`which java`
+fi
+
+case "$1" in
+    start)
+        # Main startup
+        echo -n "Starting $APPNAME (port $JMXPORT): "
+        exec $JAVA $JVM_OPTS -jar  $JARFILE > $log_file 2>&1 &
+         
+        [ ! -z $pid_file ] && printf "%d" $! > $pid_file
+        echo "OK"
+        a=$(ps -ef | grep -v grep | grep `cat pid_file` | grep java | wc -l)
+        if [ $a -ge 1 ]; then 
+            /bin/bash
+        else
+            exit 2
+        fi
+        ;;
+    stop)
+        # Main shutdown
+        echo -n "Shutdown $APPNAME (port $JMXPORT): "
+        kill `cat $pid_file`
+        echo "OK"
+        ;;
+    reload|restart)
+        $0 stop
+        $0 start
+        ;;
+    status)
+        ;;
+    *)
+        echo "Usage: `basename $0` start|stop|restart|reload"
+        exit 1
+esac
+exit 0

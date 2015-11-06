@@ -1,0 +1,55 @@
+ INFO [Thread-0] 2015-11-03 14:03:03,868 Log.java (line 178) Logging initialized @257ms
+ INFO [Thread-0] 2015-11-03 14:08:11,330 Log.java (line 178) Logging initialized @135ms
+ INFO [Thread-0] 2015-11-03 14:08:57,619 Log.java (line 178) Logging initialized @158ms
+ INFO [Thread-0] 2015-11-03 14:11:04,145 Log.java (line 178) Logging initialized @201ms
+ INFO [Thread-0] 2015-11-03 14:11:04,201 Server.java (line 301) jetty-9.1.5.v20140505
+ WARN [Thread-0] 2015-11-03 14:11:04,232 AbstractLifeCycle.java (line 210) FAILED ServerConnector@4a4802af{HTTP/1.1}{127.0.0.1:8080}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:445)
+	at sun.nio.ch.Net.bind(Net.java:437)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:279)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:218)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:337)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at business.systemd.WebServer.run(WebServer.java:39)
+	at java.lang.Thread.run(Thread.java:745)
+ WARN [Thread-0] 2015-11-03 14:11:04,237 AbstractLifeCycle.java (line 210) FAILED org.eclipse.jetty.server.Server@3af78ba5: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:445)
+	at sun.nio.ch.Net.bind(Net.java:437)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:279)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:218)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:337)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at business.systemd.WebServer.run(WebServer.java:39)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR [Thread-0] 2015-11-03 14:11:04,239 WebServer.java (line 43) Cannot start web server
+ INFO [Thread-0] 2015-11-03 14:11:16,509 Log.java (line 178) Logging initialized @172ms
+ INFO [Thread-0] 2015-11-03 14:11:16,559 Server.java (line 301) jetty-9.1.5.v20140505
+ INFO [Thread-0] 2015-11-03 14:11:16,596 AbstractConnector.java (line 266) Started ServerConnector@54b24c03{HTTP/1.1}{127.0.0.1:8080}
+ INFO [Thread-0] 2015-11-03 14:11:16,599 Server.java (line 350) Started @278ms
+ INFO [Thread-1] 2015-11-03 14:11:35,085 AbstractConnector.java (line 303) Stopped ServerConnector@54b24c03{HTTP/1.1}{127.0.0.1:8080}
+ INFO [Thread-0] 2015-11-03 14:12:55,433 Log.java (line 178) Logging initialized @172ms
+ INFO [Thread-0] 2015-11-03 14:12:55,488 Server.java (line 301) jetty-9.1.5.v20140505
+ INFO [Thread-0] 2015-11-03 14:12:55,523 AbstractConnector.java (line 266) Started ServerConnector@399a8978{HTTP/1.1}{127.0.0.1:8080}
+ INFO [Thread-0] 2015-11-03 14:12:55,526 Server.java (line 350) Started @281ms
+ INFO [Thread-1] 2015-11-03 14:13:14,272 AbstractConnector.java (line 303) Stopped ServerConnector@399a8978{HTTP/1.1}{127.0.0.1:8080}
+ INFO [Thread-0] 2015-11-03 14:13:15,534 Log.java (line 178) Logging initialized @180ms
+ INFO [Thread-0] 2015-11-03 14:13:15,591 Server.java (line 301) jetty-9.1.5.v20140505
+ INFO [Thread-0] 2015-11-03 14:13:15,628 AbstractConnector.java (line 266) Started ServerConnector@70c73be3{HTTP/1.1}{127.0.0.1:8080}
+ INFO [Thread-0] 2015-11-03 14:13:15,632 Server.java (line 350) Started @293ms
+ INFO [Thread-1] 2015-11-03 14:13:34,684 AbstractConnector.java (line 303) Stopped ServerConnector@70c73be3{HTTP/1.1}{127.0.0.1:8080}
+ INFO [Thread-0] 2015-11-03 14:13:35,775 Log.java (line 178) Logging initialized @142ms
+ INFO [Thread-0] 2015-11-03 14:13:35,825 Server.java (line 301) jetty-9.1.5.v20140505
+ INFO [Thread-0] 2015-11-03 14:13:35,864 AbstractConnector.java (line 266) Started ServerConnector@50b742d3{HTTP/1.1}{127.0.0.1:8080}
+ INFO [Thread-0] 2015-11-03 14:13:35,866 Server.java (line 350) Started @249ms

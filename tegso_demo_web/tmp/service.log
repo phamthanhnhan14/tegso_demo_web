@@ -1,0 +1,18 @@
+apppath=/zserver/java-projects/tegso_demo_web
+appenv=production
+file-log4j=/zserver/java-projects/tegso_demo_web/conf/production.log4j.ini
+log4j:ERROR Could not read configuration file [/zserver/java-projects/tegso_demo_web/conf/production.log4j.ini].
+java.io.FileNotFoundException: /zserver/java-projects/tegso_demo_web/conf/production.log4j.ini (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:97)
+	at org.apache.log4j.PropertyConfigurator.doConfigure(PropertyConfigurator.java:372)
+	at org.apache.log4j.PropertyConfigurator.configure(PropertyConfigurator.java:403)
+	at zcore.config.LogUtil.init(LogUtil.java:39)
+	at zcore.config.LogUtil.init(LogUtil.java:21)
+	at zcore.config.LogUtil.<clinit>(LogUtil.java:119)
+	at business.systemd.ServiceDaemon.main(ServiceDaemon.java:14)
+log4j:ERROR Ignoring configuration file [/zserver/java-projects/tegso_demo_web/conf/production.log4j.ini].
+log4j:WARN No appenders could be found for logger (org.eclipse.jetty.util.log).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
