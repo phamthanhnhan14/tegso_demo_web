@@ -52,7 +52,7 @@ case "$1" in
          
         [ ! -z $pid_file ] && printf "%d" $! > $pid_file
         echo "OK"
-        a=$(ps -ef | grep -v grep | grep `cat pid_file` | grep java | wc -l)
+        a=$(ps -ef | grep -v grep | grep `cat $pid_file` | grep java | wc -l)
         if [ $a -ge 1 ]; then 
             /bin/bash
         else
